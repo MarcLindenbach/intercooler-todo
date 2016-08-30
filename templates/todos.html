@@ -1,18 +1,20 @@
-{% for todo in todos %}
-  <div class="row {% if todo.complete %}text-muted{% endif %}" style="margin-top:1rem;">
-    <div class="col-xs-6 col-md-6 offset-md-1">
-      {% if todo.complete %}
-        <span class="octicon octicon-check"></span>
-      {% endif %}
-      {% if todo.complete %}<s>{% endif %}
-        {{todo.text}}
-      {% if todo.complete %}</s>{% endif %}
+<div ic-src="/todos">
+  {% for todo in todos %}
+    <div class="row {% if todo.complete %}text-muted{% endif %}" style="margin-top:1rem;">
+      <div class="col-xs-6 col-md-6 offset-md-1">
+        {% if todo.complete %}
+          <span class="octicon octicon-check"></span>
+        {% endif %}
+        {% if todo.complete %}<s>{% endif %}
+          {{todo.text}}
+        {% if todo.complete %}</s>{% endif %}
+      </div>
+      <div class="col-xs-3 col-md-2">
+        <button ic-put-to="/todos/{{todo.id}}" type="button" class="btn btn-block btn-outline-success"><span class="octicon octicon-check"></span> Toggle</button>
+      </div>
+      <div class="col-xs-3 col-md-2">
+        <button ic-delete-from="/todos/{{todo.id}}" type="button" class="btn btn-block btn-outline-danger"><span class="octicon octicon-trashcan"></span> Delete</button>
+      </div>
     </div>
-    <div class="col-xs-3 col-md-2">
-      <button ic-put-to="/todos/{{todo.id}}" type="button" class="btn btn-block btn-outline-success"><span class="octicon octicon-check"></span> Toggle</button>
-    </div>
-    <div class="col-xs-3 col-md-2">
-      <button ic-delete-from="/todos/{{todo.id}}" type="button" class="btn btn-block btn-outline-danger"><span class="octicon octicon-trashcan"></span> Delete</button>
-    </div>
-  </div>
-{% endfor %}
+  {% endfor %}
+</div>
