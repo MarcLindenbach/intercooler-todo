@@ -1,0 +1,13 @@
+<ul>
+  {% for todo in todos %}
+    <li>
+      {% if todo.complete %}
+        <s>{{todo.text}}</s>
+      {% else %}
+        {{todo.text}}
+      {% endif %}
+      <button ic-put-to="/todos/{{todo.id}}">Toggle</button>
+      <button ic-delete-from="/todos/{{todo.id}}">Delete</button>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Intercooler Todo List</title>
+    <meta name="intercoolerjs:use-actual-http-method" content="true"/>
+  </head>
+  <body>
+    <h1>
+      Intercooler Todo List
+    </h1>
+
+    {% include "todo_form.html" %}
+
+    <div ic-src="/todos">
+      {% include "todos.html" %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://intercoolerreleases-leaddynocom.netdna-ssl.com/intercooler-0.9.7.min.js"></script>
+  </body>
+</html>
