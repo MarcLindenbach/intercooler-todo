@@ -1,18 +1,31 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>Intercooler Todo List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="intercoolerjs:use-actual-http-method" content="true"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.css">
   </head>
   <body>
-    <h1>
-      Intercooler Todo List
-    </h1>
 
-    {% include "todo_form.html" %}
+    <div class="container">
+      <div class="row align-center" style="margin-top:1rem; margin-bottom:1rem;">
+        <h1 class="text-xs-center">
+          <a href="http://intercoolerjs.org/">intercooler.js</a> Todo List
+        </h1>
+      </div>
 
-    <div ic-src="/todos">
-      {% include "todos.html" %}
-    </div>
+      <div class="row">
+        {% include "todo_form.html" %}
+      </div>
+
+      <div ic-src="/todos">
+        {% include "todos.html" %}
+      </div>
+    <div>
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://intercoolerreleases-leaddynocom.netdna-ssl.com/intercooler-0.9.7.min.js"></script>
