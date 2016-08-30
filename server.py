@@ -40,13 +40,14 @@ def todos_post():
 
     todos = read_todos()
 
-    next_id = 1
+    id = 1
     if len(todos) > 0:
-        next_id = todos[-1]['id'] + 1
+        id = todos[-1]['id'] + 1
 
     todos.append({
-        'id': next_id,
-        'text': request.form['text']
+        'id': id,
+        'text': request.form['text'],
+        'complete': False
     })
 
     save_todos(todos)
@@ -64,11 +65,8 @@ def todos_delete(id):
 def toggle_todo(id):
     todos = read_todos()
     i = find_todo(todos, id)
-    if 'complete' in todos[i]:
-        todos[i]['complete'] = not todos[i]['complete']
-    else:
-        todos[i]['complete'] = True
-
+    todos[i]['complete'] = not todos[i]['complete']
+    
     save_todos(todos)
     return('', 200)
 
