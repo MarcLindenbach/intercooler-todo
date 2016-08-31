@@ -1,19 +1,20 @@
 <div ic-src="/todos">
   {% for todo in todos %}
     <div class="row {% if todo.complete %}text-muted{% endif %}" style="margin-top:1rem;">
-      <div class="col-xs-6 col-md-6 offset-md-1">
+      <div class="col-xs-8 col-md-6 offset-md-1">
         {% if todo.complete %}
-          <span class="octicon octicon-check"></span>
+        <i class="fa fa-check" aria-hidden="true"></i>
         {% endif %}
         {% if todo.complete %}<s>{% endif %}
           {{todo.text}}
         {% if todo.complete %}</s>{% endif %}
+        <i id="indicator-{{todo.id}}" class="fa fa-spinner fa-spin" style="display:none"></i>
       </div>
-      <div class="col-xs-3 col-md-2">
-        <button ic-put-to="/todos/{{todo.id}}" type="button" class="btn btn-block btn-outline-success"><span class="octicon octicon-check"></span> <span class="hidden-xs-down">Toggle<span></button>
+      <div class="col-xs-2 col-md-2">
+        <button ic-put-to="/todos/{{todo.id}}" ic-indicator="#indicator-{{todo.id}}" type="button" class="btn btn-block btn-outline-success"><i class="fa fa-check" aria-hidden="true"></i> <span class="hidden-xs-down">Toggle<span></button>
       </div>
-      <div class="col-xs-3 col-md-2">
-        <button ic-delete-from="/todos/{{todo.id}}" type="button" class="btn btn-block btn-outline-danger"><span class="octicon octicon-trashcan"></span> <span class="hidden-xs-down">Toggle<span></button>
+      <div class="col-xs-2 col-md-2">
+        <button ic-delete-from="/todos/{{todo.id}}" ic-indicator="#indicator-{{todo.id}}" type="button" class="btn btn-block btn-outline-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> <span class="hidden-xs-down">Delete<span></button>
       </div>
     </div>
   {% endfor %}
