@@ -10,10 +10,10 @@
         {% if todo.complete %}</s>{% endif %}
       </div>
       <div class="col-xs-3 col-md-2">
-        <button ic-put-to="/todos/{{todo.id}}" type="button" class="btn btn-block btn-outline-success"><span class="octicon octicon-check"></span> Toggle</button>
+        <button ic-put-to="/todos/{{todo.id}}" type="button" class="btn btn-block btn-outline-success"><span class="octicon octicon-check"></span> <span class="hidden-xs-down">Toggle<span></button>
       </div>
       <div class="col-xs-3 col-md-2">
-        <button ic-delete-from="/todos/{{todo.id}}" type="button" class="btn btn-block btn-outline-danger"><span class="octicon octicon-trashcan"></span> Delete</button>
+        <button ic-delete-from="/todos/{{todo.id}}" type="button" class="btn btn-block btn-outline-danger"><span class="octicon octicon-trashcan"></span> <span class="hidden-xs-down">Toggle<span></button>
       </div>
     </div>
   {% endfor %}
