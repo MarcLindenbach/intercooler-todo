@@ -1,13 +1,13 @@
 <form ic-post-to="/todos/" method="post" ic-indicator="#post-indicator">
-  <div class="col-xs-8 col-md-6 offset-md-1">
-    <input name="text" class="form-control" placeholder="Todo Item" />
-  </div>
-  <div class="col-xs-2 col-md-2">
-    <button class="btn btn-block btn-outline-primary"><i class="fa fa-plus" aria-hidden="true"></i> <span class="hidden-xs-down">Add<span></button>
-  </div>
-  <div class="col-xs-2 col-md-2 text-primary text-xs-center">
-    <h3>
-      <i id="post-indicator" class="fa fa-spinner fa-spin" style="display:none"></i>
-    </h3>
+  <div class="col-xs-12">
+    <div class="input-group">
+      <input name="text" class="form-control" placeholder="Todo Item" />
+      <span class="input-group-btn">
+        <button class="btn btn-outline-primary">
+          <i class="fa fa-plus" aria-hidden="true"></i> <span class="hidden-sm-down">Add</span>
+          <i id="post-indicator" class="fa fa-spinner fa-spin" style="display:none"></i>
+        </button>
+      </span>
+    </div>
   </div>
 </form>
