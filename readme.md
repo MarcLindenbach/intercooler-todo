@@ -8,3 +8,6 @@ Lightweight Todo Application written using Intercooler.js and Python/Flask.
  2. `source venv/bin/activate`
  3. `pip install -r requirements.txt`
  4. `python server.py`
+
+## Example
+[Click Here](todo.lindenbach.ca) to see a live example
