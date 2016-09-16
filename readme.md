@@ -10,4 +10,4 @@ Lightweight Todo Application written using Intercooler.js and Python/Flask.
  4. `python server.py`
 
 ## Example
-[Click Here](todo.lindenbach.ca) to see a live example
+[Click Here](http://todo.lindenbach.ca) to see a live example
